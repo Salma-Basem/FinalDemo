@@ -1,0 +1,30 @@
+<div class="container-fluid bg-main py-5" [attr.dir]="language === 'ar' ? 'rtl' : 'ltr'">
+  <div class="container ">
+    <h2 class="text-center text-title position-relative fw-bold mb-3">
+      {{ 'MEET' | translate }}
+    </h2>
+
+    <div class="row image-gallery d-flex justify-content-center mt-3">
+      <div class="col-md-3 col-12 d-flex justify-content-center mt-4" *ngFor="let image of images">
+        <div class="image-item">
+          <img [src]="image.src" [alt]="image.name">
+          <div class="overlay">
+            <div class="text ">{{ image.name | translate }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 text-center">
+   
+      <a routerLink="/AboutUs/BoardMembers" class="btn btn-primary w-auto">
+        {{ 'KNOW_MORE' | translate }}
+        <i class="fa-solid"
+           [ngClass]="{
+               'fa-arrow-right': dir === 'ltr',
+               'fa-arrow-left': dir === 'rtl'
+           }"></i>
+    </a>
+   
+  </div>  
+  </div>
+</div>
